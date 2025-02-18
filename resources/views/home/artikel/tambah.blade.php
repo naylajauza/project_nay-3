@@ -32,13 +32,13 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="form-label">Deskripsi</label>
+                                    <label for="deskripsi" class="form-label">Deskripsi</label>
                                     <input type="text" name="deskripsi" class="form-control" placeholder="Masukan Deskripsi" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="" class="form-label">Cover</label>
-                                    <input type="text" name="cover" class="form-control" placeholder="Masukan Cover" required>
-                                </div>
+                                <div class="mb-3">
+									<label for="cover" class="form-label">Cover</label>
+									<input class="form-control" type="file" id="formFileMultiple" multiple>
+								</div>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                 <button type="reset" class="btn btn-secondary">Batal</button>
                                 </form>
