@@ -21,7 +21,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Tanggal</label>
-                                    <input type="date" name="tanggal" class="form-control" placeholder="Masukan Tanggal" required>
+                                    <input type="date" name="tanggal" class="form-cokategntrol" placeholder="Masukan Tanggal" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Kategori</label>
