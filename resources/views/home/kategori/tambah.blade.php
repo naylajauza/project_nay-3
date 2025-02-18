@@ -13,7 +13,7 @@
                                 </center>
                             </div>
                             <div class="card-body">
-                                <form action="admin/kategori/simpan" method="POST">
+                                <form action="/admin/kategori/simpan" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="" class="form-label">Nama Kategori</label>

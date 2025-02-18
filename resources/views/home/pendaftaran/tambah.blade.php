@@ -13,7 +13,7 @@
                                 </center>
                             </div>
                             <div class="card-body">
-                                <form action="admin/pendaftaran/simpan" method="POST">
+                                <form action="/admin/pendaftaran/simpan" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="" class="form-label">Nama Siswa</label>

@@ -13,7 +13,7 @@
                             </center>
                         </div>
                         <div class="card-body">
-                            <form action="admin/testimoni/{{$testimoni->id}}/update" method="POST">
+                            <form action="/admin/testimoni/{{$testimoni->id}}/update" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="" class="form-label">Nama Siswa</label>
@@ -32,7 +32,7 @@
                                 <input type="text" name="pesan" value="{{$testimoni->pesan}}" class="form-control" placeholder="Masukan Pesan" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="admin/testimoni" class="btn btn-secondary">Batal</a>
+                            <a href="/admin/testimoni" class="btn btn-secondary">Batal</a>
                             </form>
                         </div>
                     </div>

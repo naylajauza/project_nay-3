@@ -13,7 +13,7 @@
                             </center>
                         </div>
                         <div class="card-body">
-                            <form action="admin/artikel/{{$artikel->id}}/update" method="POST">
+                            <form action="/admin/artikel/{{$artikel->id}}/update" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="" class="form-label">Judul</label>
@@ -40,7 +40,7 @@
                                 <input type="text" name="cover" value="{{$artikel->cover}}" class="form-control" placeholder="Masukan Cover" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="admin/artikel" class="btn btn-secondary">Batal</a>
+                            <a href="/admin/artikel" class="btn btn-secondary">Batal</a>
                             </form>
                         </div>
                     </div>

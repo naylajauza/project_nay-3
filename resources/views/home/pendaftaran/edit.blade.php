@@ -13,7 +13,7 @@
                             </center>
                         </div>
                         <div class="card-body">
-                            <form action="admin/pendaftaran/{{$pendaftaran->id}}/update" method="POST">
+                            <form action="/admin/pendaftaran/{{$pendaftaran->id}}/update" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="" class="form-label">Nama Siswa</label>
@@ -40,7 +40,7 @@
                                 <input type="text" name="status" value="{{$pendaftaran->status}}" class="form-control" placeholder="Masukan Status" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="admin/pendaftaran" class="btn btn-secondary">Batal</a>
+                            <a href="/admin/pendaftaran" class="btn btn-secondary">Batal</a>
                             </form>
                         </div>
                     </div>

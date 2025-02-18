@@ -13,7 +13,7 @@
                             </center>
                         </div>
                         <div class="card-body">
-                            <form action="admin/user/{{$user->id}}/update" method="POST">
+                            <form action="/admin/user/{{$user->id}}/update" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="" class="form-label">Nama</label>
@@ -35,7 +35,7 @@
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="admin/user" class="btn btn-secondary">Batal</a>
+                            <a href="/admin/user" class="btn btn-secondary">Batal</a>
                             </form>
                         </div>
                     </div>

@@ -13,7 +13,7 @@
                             </center>
                         </div>
                         <div class="card-body">
-                            <form action="admin/kursus/{{$kursus->id}}/update" method="POST">
+                            <form action="/admin/kursus/{{$kursus->id}}/update" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="" class="form-label">Nama Kursus</label>
@@ -32,7 +32,7 @@
                                 <input type="text" name="durasi" value="{{$kursus->durasi}}" class="form-control" placeholder="Masukan Durasi" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="admin/kursus" class="btn btn-secondary">Batal</a>
+                            <a href="/admin/kursus" class="btn btn-secondary">Batal</a>
                             </form>
                         </div>
                     </div>

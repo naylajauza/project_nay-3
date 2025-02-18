@@ -10,7 +10,7 @@
                             <div class="card-header">
                                 <center>
                                     <h3>Halaman Kategori</h3>
-                                    <a href="admin/kategori/tambah" class="btn btn-primary">Tambah Data </a>
+                                    <a href="/admin/kategori/tambah" class="btn btn-primary">Tambah Data </a>
                                 </center>
                             </div>
                             <div class="card-body">
@@ -29,8 +29,8 @@
                                                 <td scope="row">{{$u->id}}</td>
                                                 <td>{{$u->nama_kategori}}</td>
                                                 <td>
-                                                    <a href="admin/kategori/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
-                                                    <a href="admin/kategori/{{$u->id}}/hapus" class="btn btn-danger" onclick="return confirm('yakin?')">Hapus</a>
+                                                    <a href="/admin/kategori/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
+                                                    <a href="/admin/kategori/{{$u->id}}/hapus" class="btn btn-danger" onclick="return confirm('yakin?')">Hapus</a>
                                                 </td>
                                             </tr>
                                             @endforeach

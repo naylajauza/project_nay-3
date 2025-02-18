@@ -10,7 +10,7 @@
                             <div class="card-header">
                                 <center>
                                     <h3>Halaman Pendaftaran</h3>
-                                    <a href="admin/pendaftaran/tambah" class="btn btn-primary">Tambah Data </a>
+                                    <a href="/admin/pendaftaran/tambah" class="btn btn-primary">Tambah Data </a>
                                 </center>
                             </div>
                             <div class="card-body">
@@ -39,8 +39,8 @@
                                                 <td>{{$u->tgl_pendaftaran}}</td>
                                                 <td>{{$u->status}}</td>
                                                 <td>
-                                                    <a href="admin/pendaftaran/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
-                                                    <a href="admin/pendaftaran/{{$u->id}}/hapus" class="btn btn-danger" onclick="return confirm('yakin?')">Hapus</a>
+                                                    <a href="/admin/pendaftaran/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
+                                                    <a href="/admin/pendaftaran/{{$u->id}}/hapus" class="btn btn-danger" onclick="return confirm('yakin?')">Hapus</a>
                                                 </td>
                                             </tr>
                                             @endforeach

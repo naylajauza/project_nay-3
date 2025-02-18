@@ -10,7 +10,7 @@
                             <div class="card-header">
                                 <center>
                                     <h3>Halaman Akun</h3>
-                                    <a href="admin/user/tambah" class="btn btn-primary">Tambah Data </a>
+                                    <a href="/admin/user/tambah" class="btn btn-primary">Tambah Data </a>
                                 </center>
                             </div>
                             <div class="card-body">
@@ -35,8 +35,8 @@
                                                 <td>{{$u->username}}</td>
                                                 <td>{{$u->created_at}}</td>
                                                 <td>
-                                                    <a href="admin/user/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
-                                                    <a href="admin/user/{{$u->id}}/hapus" class="btn btn-danger" onclick="return confirm('yakin?')">Hapus</a>
+                                                    <a href="/admin/user/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
+                                                    <a href="/admin/user/{{$u->id}}/hapus" class="btn btn-danger" onclick="return confirm('yakin?')">Hapus</a>
                                                 </td>
                                             </tr>
                                             @endforeach
