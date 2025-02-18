@@ -1,0 +1,29 @@
+//Dashboard Controller
+
+<?php
+
+namespace App\Http\Controllers;
+use App\Models\Sepatu;
+use App\Models\Member;
+use App\Models\Penjualan;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+
+class DashboardController extends Controller
+{
+    public function index()
+    {
+        $jumlah_member = Member::count();
+        $jumlah_barang = Sepatu::count();
+        $penjualan = Penjualan::Select()->orderBy('tgl_bayar','desc')
+                            ->limit(5)
+                            ->get();
+
+        $today = Carbon::today();
+        $endDate = Carbon::today()->addDays(7);
+        $total_penjualan = Penjualan::Select(Penjualan::raw('SUM(jumlah_bayar) as total_price')) 
+            ->whereBetween('tgl_bayar', [$today, $endDate])->first();
+        return view('home.dashboard', compact('penjualan','jumlah_member','jumlah_barang'),['total_penjualan' => $total_penjualan]);
+                               
+    }
+}

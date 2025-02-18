@@ -1,0 +1,2 @@
+<a href="/penjualan/cetak" target="_blank" class="btn btn-success"><span class="fa fa-print"></span>Keseluruhan</a>
+<a href="/penjualan/{{$s->id}}/struk" target="_blank" class="btn btn-sm btn-success"><span class="fa fa-print">Cetak Struk</span></a>

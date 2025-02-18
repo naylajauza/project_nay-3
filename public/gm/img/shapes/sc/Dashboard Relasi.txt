@@ -1,0 +1,138 @@
+//Dashboard With Table
+
+@extends('layouts.master')
+@section('title','halaman dashboard')
+@section('content')
+<div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+          <div class="card-header p-3 pt-2">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+              <i class="material-icons opacity-10">assignment</i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize">Jumlah Bayar</p>
+              <h4 class="mb-0">{{$jumlah_barang}}</h4>
+            </div>
+          </div>
+          <hr class="dark horizontal my-0">
+          <div class="card-footer p-3">
+            <center>
+              <a href="/penjualan">
+                <p class="mb-0">More</p>
+              </a>
+            </center>
+            {{-- <span class="text-success text-sm font-weight-bolder">+55% </span> --}}
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+          <div class="card-header p-3 pt-2">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+              <i class="material-icons opacity-10">person_add</i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize">Jumlah Member</p>
+              <h4 class="mb-0">{{$jumlah_member}}</h4>
+            </div>
+          </div>
+          <hr class="dark horizontal my-0">
+          <div class="card-footer p-3">
+            <center>
+              <a href="/member">
+                <p class="mb-0">More</p>
+              </a>
+            </center>
+            {{-- <span class="text-danger text-sm font-weight-bolder">-2%</span>  --}}
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6">
+        <div class="card">
+          <div class="card-header p-3 pt-2">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+              <i class="material-icons opacity-10">leaderboard</i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize">Penjualan</p>
+              <h4 class="mb-0">
+                @if ($total_penjualan->total_price == null)
+                0
+                @else
+                {{$total_penjualan->total_price}}
+                @endif
+              </h4>
+            </div>
+          </div>
+          <hr class="dark horizontal my-0">
+          <div class="card-footer p-3">
+            <center>
+              <a href="/penjualan">
+                <p class="mb-0">More</p>
+              </a>
+            </center>
+            {{-- <span class="text-success text-sm font-weight-bolder">+5% </span> --}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+    
+    </div>
+    {{-- <div class="card mb-3">
+      <div class="card-body p-3">
+        <div class="chart">
+          <canvas id="line-chart" class="chart-canvas" height="300px"></canvas>
+        </div>
+      </div>
+    </div> --}}
+
+    <div class="row ">
+      <div class="col-12 grid-margin">
+        <div class="card">
+          <div class="card-header">
+              <center>
+                  <h4>History Penjualan</h4>
+                  
+              </center>
+          </div>
+          <div class="card-body">
+              <div class="table-responsive">
+                  <table id="example" class="table table-stripped table-hover table-bordered">
+                      <thead>
+                          <tr>
+                              <th scope="col">NO/ID</th>
+                              <th scope="col">Kasir</th>
+                              <th scope="col">Member</th>
+                              <th scope="col">Sepatu</th>
+                              <th scope="col">Tanggal Bayar</th>
+                              <th scope="col">Jumlah Bayar</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          @foreach ($penjualan as $p)
+                          <tr class="">                             
+                              <td scope="row">{{$p->id}}</td>
+                              <td>{{$p->user->nama_kasir}}</td>
+                              <td>{{$p->member->nama}}</td>
+                              <td>{{$p->sepatu->nama_sepatu}}</td>
+                              <td>{{$p->tgl_bayar}}</td>
+                              <td>{{$p->jumlah_bayar}}</td>
+                          </tr>
+                          @endforeach
+                      </tbody>
+                  </table>
+                  
+              </div>
+              
+          </div>
+      </div>
+      </div>
+    </div>
+@endsection

@@ -1,0 +1,44 @@
+@extends('layouts.master')
+@section('title','halaman edit data user')
+@section('content')
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <h4>Halaman Tambah Data User</h4>
+                    </center>
+                </div>
+                <div class="card-body">
+                    <form action="/user/{{$user->id}}/update" method="POST">
+                        @csrf
+                        <div class="input-group input-group-outline my-3">
+                            <label class="form-label">Nama Kasir</label>
+                            <input type="text"  class="form-control" name="nama_kasir">
+                          </div>
+                        <div class="input-group input-group-outline my-3">
+                            <label class="form-label">Username</label>
+                            <input type="text"  class="form-control" name="username">
+                          </div>
+                          <div class="input-group input-group-outline my-3">
+                            <label class="form-label">Password</label>
+                            <input type="password"  class="form-control" name="password">
+                          </div>
+                          <div class="input-group input-group-outline my-3">
+                            <label class="form-label">Level</label>
+                            <input type="number"  class="form-control" name="level">
+                          </div>
+                        
+                        <div>
+                            <button type="submit" class="btn btn-info">Simpan</button>
+                            <a href="/user" class="btn btn-info">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection
