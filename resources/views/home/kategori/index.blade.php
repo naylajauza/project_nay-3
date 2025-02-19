@@ -23,10 +23,13 @@
                                                 <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
+                                        @php
+                                            $i = 0
+                                            @endphp
                                         <tbody>
                                             @foreach ($kategori as $u)
                                             <tr class="">
-                                                <td scope="row">{{$u->id}}</td>
+                                                <td scope="row">{{++$i}}</td>
                                                 <td>{{$u->nama_kategori}}</td>
                                                 <td>
                                                     <a href="/admin/kategori/{{$u->id}}/edit" class="btn btn-warning">Edit</a>

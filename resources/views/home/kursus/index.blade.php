@@ -26,10 +26,13 @@
                                                 <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
+                                        @php
+                                            $i=0
+                                        @endphp
                                         <tbody>
                                             @foreach ($kursus as $u)
                                             <tr class="">
-                                                <td scope="row">{{$u->id}}</td>
+                                                <td scope="row">{{++$i}}</td>
                                                 <td>{{$u->nama_kursus}}</td>
                                                 <td>{{$u->deskripsi}}</td>
                                                 <td>{{$u->harga}}</td>

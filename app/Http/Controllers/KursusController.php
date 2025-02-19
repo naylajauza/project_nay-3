@@ -37,7 +37,7 @@ class KursusController extends Controller
     public function store(Request $request)
     {
         Kursus::create($request->all());
-        return redirect('/kursus');
+        return redirect('admin/kursus');
     }
 
     /**
@@ -74,7 +74,7 @@ class KursusController extends Controller
     {
         $kursus = Kursus::find($id);
         $kursus->update($request->all());
-        return redirect('/kursus');
+        return redirect('admin/kursus');
     }
 
     /**
@@ -87,6 +87,6 @@ class KursusController extends Controller
     {
         $kursus = Kursus::find($id);
         $kursus->delete();
-        return redirect('/kursus');
+        return redirect('admin/kursus');
     }
 }

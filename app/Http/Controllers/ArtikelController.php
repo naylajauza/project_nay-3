@@ -38,8 +38,27 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
-        Artikel::create($request->all());
-        return redirect('/artikel');
+        // Validasi data yang diterima, termasuk gambar cover
+        $request->validate([
+        'cover' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi gambar
+        ]);
+
+        // Simpan artikel tanpa cover terlebih dahulu
+        $data = $request->all();
+
+        // Simpan gambar jika ada
+        if ($request->hasFile('cover')) {
+            $file = $request->file('cover');
+            $filename = time() . '_' . $file->getClientOriginalName(); // Nama unik
+            $file->storeAs('public/covers/artikels', $filename); // Simpan ke storage
+
+            // Menambahkan path file gambar ke data artikel
+            $data['cover'] = 'storage/covers/artikels/' . $filename;
+        }
+
+        Artikel::create($data);
+
+        return redirect('admin/artikel');
     }
 
     /**
@@ -77,7 +96,7 @@ class ArtikelController extends Controller
     {
         $artikel = Artikel::find($id);
         $artikel->update($request->all());
-        return redirect('/artikel');
+        return redirect('admin/artikel');
     }
 
     /**
@@ -90,6 +109,6 @@ class ArtikelController extends Controller
     {
         $artikel = Artikel::find($id);
         $artikel->delete();
-        return redirect('/artikel');
+        return redirect('admin/artikel');
     }
 }

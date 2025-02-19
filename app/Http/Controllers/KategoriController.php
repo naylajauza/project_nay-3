@@ -38,7 +38,7 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         Kategori::create($request->all());
-        return redirect('/kategori');
+        return redirect('admin/kategori');
 
         return redirect()->route('kategori.index');
     }
@@ -77,7 +77,7 @@ class KategoriController extends Controller
     {
         $kategori = Kategori::find($id);
         $kategori->update($request->all());
-        return redirect('/kategori');
+        return redirect('admin/kategori');
     }
 
     /**
@@ -90,6 +90,6 @@ class KategoriController extends Controller
     {
         $kategori = Kategori::find($id);
         $kategori->delete();
-        return redirect('/kategori');
+        return redirect('admin/kategori');
     }
 }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('tanggal');
             $table->integer('id_kategori');
             $table->text('deskripsi');
-            $table->string('cover', 30);
+            $table->string('cover');
             $table->string('slug')->unique();
             $table->timestamps();
         });

@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Artikel')
+@section('title', 'Artikel')
 @section('content')
     <div class="content-wrapper">
         <section class="content">
@@ -29,18 +29,24 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($artikel as $u)
-                                            <tr class="">
-                                                <td scope="row">{{$u->id}}</td>
-                                                <td>{{$u->judul}}</td>
-                                                <td>{{$u->tanggal}}</td>
-                                                <td>{{$u->kategori->nama_kategori}}</td>
-                                                <td>{{$u->deskripsi}}</td>
-                                                <td>{{$u->cover}}</td>
-                                                <td>
-                                                    <a href="/admin/artikel/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
-                                                    <a href="/admin/artikel/{{$u->id}}/hapus" class="btn btn-danger" onclick="return confirm('yakin?')">Hapus</a>
-                                                </td>
-                                            </tr>
+                                                <tr class="">
+                                                    <td scope="row">{{ $u->id }}</td>
+                                                    <td>{{ $u->judul }}</td>
+                                                    <td>{{ $u->tanggal }}</td>
+                                                    <td>{{ $u->kategori->nama_kategori }}</td>
+                                                    <td>{{ $u->deskripsi }}</td>
+                                                    <td>
+                                                        <img src="{{ asset( $u->cover) }}"
+                                                            class="rounded"
+                                                            style="width: 150px; height: 150px; object-fit: cover;">
+                                                    <td>
+                                                        <a href="/admin/artikel/{{ $u->id }}/edit"
+                                                            class="btn btn-warning">Edit</a>
+                                                        <a href="/admin/artikel/{{ $u->id }}/hapus"
+                                                            class="btn btn-danger"
+                                                            onclick="return confirm('yakin?')">Hapus</a>
+                                                    </td>
+                                                </tr>
                                             @endforeach
 
                                         </tbody>
