@@ -40,9 +40,9 @@
                                                             class="rounded"
                                                             style="width: 150px; height: 150px; object-fit: cover;">
                                                     <td>
-                                                        <a href="/admin/artikel/{{ $u->id }}/edit"
+                                                        <a href="/admin/artikel/{{ $u->slug }}/edit"
                                                             class="btn btn-warning">Edit</a>
-                                                        <a href="/admin/artikel/{{ $u->id }}/hapus"
+                                                        <a href="/admin/artikel/{{ $u->slug }}/hapus"
                                                             class="btn btn-danger"
                                                             onclick="return confirm('yakin?')">Hapus</a>
                                                     </td>

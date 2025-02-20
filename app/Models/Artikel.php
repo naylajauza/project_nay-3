@@ -31,7 +31,30 @@ class Artikel extends Model
 
             $artikel->slug = $slug;
         });
+
+        static::updating(function($artikel){
+            if($artikel->isDirty('title')){
+                $artikel->slug = Str::slug($artikel->title);
+
+                $slug = $artikel->slug;
+                $originalSlug = $slug;
+                $count = 1;
+
+                while (Artikel::where('slug', $slug)->where('id', '!=', $artikel->id)->exists()) {
+                    $slug = $originalSlug . '-' . $count;
+                    $count++;
+                }
+
+                $artikel->slug = $slug;
+            }
+        });
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function Kategori(){
         return $this->belongsTo(Kategori::class, 'id_kategori','id');
     }

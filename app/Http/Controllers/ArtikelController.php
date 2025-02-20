@@ -67,7 +67,7 @@ class ArtikelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Artikel $artikel)
     {
         $artikel = Artikel::find($id);
         $kategori = Kategori::all();
@@ -92,7 +92,7 @@ class ArtikelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Artikel $artikel)
     {
         $artikel = Artikel::find($id);
         $artikel->update($request->all());
@@ -105,7 +105,7 @@ class ArtikelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Artikel $artikel)
     {
         $artikel = Artikel::find($id);
         $artikel->delete();
