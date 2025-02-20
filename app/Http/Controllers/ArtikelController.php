@@ -69,7 +69,7 @@ class ArtikelController extends Controller
      */
     public function edit(Artikel $artikel)
     {
-        $artikel = Artikel::find($id);
+        $artikel = Artikel::find($artikel);
         $kategori = Kategori::all();
         return view('home.artikel.edit', compact(['artikel'],'kategori'));
     }
@@ -94,8 +94,8 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, Artikel $artikel)
     {
-        $artikel = Artikel::find($id);
-        $artikel->update($request->all());
+        $artikels = Artikel::find($artikel);
+        $artikels->update($request->all());
         return redirect('admin/artikel');
     }
 
@@ -107,8 +107,8 @@ class ArtikelController extends Controller
      */
     public function destroy(Artikel $artikel)
     {
-        $artikel = Artikel::find($id);
-        $artikel->delete();
+        $artikels = Artikel::find($artikel);
+        $artikels->delete();
         return redirect('admin/artikel');
     }
 }

@@ -18,7 +18,7 @@ class Artikel extends Model
 
         static::creating(function ($artikel){
             if (empty($artikel->slug)) {
-                $artikel->slug = Str::slug($artikel->title);
+                $artikel->slug = Str::slug($artikel->judul);
             }
             $slug = $artikel->slug;
             $originalSlug = $slug;
@@ -33,8 +33,8 @@ class Artikel extends Model
         });
 
         static::updating(function($artikel){
-            if($artikel->isDirty('title')){
-                $artikel->slug = Str::slug($artikel->title);
+            if($artikel->isDirty('judul')){
+                $artikel->slug = Str::slug($artikel->judul);
 
                 $slug = $artikel->slug;
                 $originalSlug = $slug;

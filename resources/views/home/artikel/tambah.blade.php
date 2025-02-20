@@ -37,7 +37,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="cover" class="form-label">Cover</label>
-                                        <input class="form-control" name="cover" type="file" id="formFileMultiple" multiple>
+                                        <input class="form-control" name="cover" type="file" id="formFile">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                     <button type="reset" class="btn btn-secondary">Batal</button>
