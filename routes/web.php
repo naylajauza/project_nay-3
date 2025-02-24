@@ -31,6 +31,11 @@ Route::get('/', function () {
     $artikel = Artikel::all();
     return view('home.frontendUser.blog', compact(['artikel']));
 });
+Route::get('/testimoni', function () {
+    $testimoni = \App\Models\Testimoni::all();
+    return view('home.frontendUser.testimoni', compact(['testimoni']));
+});
+Route::post('/pendaftaran/daftar', [PendaftaranController::class, 'daftar'])->name('pendaftaran.daftar');
 // route admin (backend)
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], function () {
     Route::get('/', function () {

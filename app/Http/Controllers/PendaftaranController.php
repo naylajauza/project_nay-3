@@ -41,6 +41,29 @@ class PendaftaranController extends Controller
         Pendaftaran::create($request->all());
         return redirect('/pendaftaran');
     }
+    public function daftar(Request $request)
+    {
+        $request->validate([
+            'namasiswa' => 'required',
+            'alamat' => 'required',
+            'no_tlp' => 'required',
+            // 'email' => 'required',
+            'tgl_lahir' => 'required',
+            // 'tgl_pendaftaran' => 'required',
+            // 'status' => 'required',
+        ]);
+
+        Pendaftaran::create([
+            'namasiswa' => $request->namasiswa,
+            'alamat' => $request->alamat,
+            'no_tlp' => $request->no_tlp,
+            // 'email' => $request->email,
+            'tgl_lahir' => $request->tgl_lahir,
+            'tgl_pendaftaran' => now(),
+            'status' => 'Belum Dibayar'
+        ]);
+        return redirect('/')->with('success', 'Pendaftaran Berhasil');
+    }
 
     /**
      * Display the specified resource.
