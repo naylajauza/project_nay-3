@@ -8,6 +8,7 @@ use App\Http\Controllers\KursusController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FrontEndController;
 use App\Http\Middleware\IsAdmin;
 use App\Models\Artikel;
 
@@ -27,14 +28,13 @@ Route::get('/l',[LoginController::class,'index']);
 Route::get('/login',[LoginController::class,'index'])->name('login');
 Route::post('/PostLogin',[LoginController::class,'login']);
 Route::get('/logout',[LoginController::class,'logout']);
-Route::get('/', function () {
-    $artikel = Artikel::all();
-    return view('home.frontendUser.blog', compact(['artikel']));
-});
-Route::get('/testimoni', function () {
-    $testimoni = \App\Models\Testimoni::all();
-    return view('home.frontendUser.testimoni', compact(['testimoni']));
-});
+
+//frontend
+Route::get('/', [FrontEndController::class, 'index'])->name('blog');
+Route::get('/testimoni', [FrontEndController::class, 'testimoni'])->name('testimoni');
+Route::get('/home', [FrontEndController::class, 'home'])->name('home');
+Route::get('/contact', [FrontEndController::class, 'contact'])->name('contact');
+
 Route::post('/pendaftaran/daftar', [PendaftaranController::class, 'daftar'])->name('pendaftaran.daftar');
 // route admin (backend)
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], function () {
