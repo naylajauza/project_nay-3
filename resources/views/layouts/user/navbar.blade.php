@@ -10,19 +10,29 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="{{ route('home') }}" class="nav-item nav-link {{ Request::routeIs('home') ? 'active' : '' }}">Home</a>
-                        <a href="{{ route('blog') }}" class="nav-item nav-link {{ Request::routeIs('blog') ? 'active' : '' }}">Blog</a>
+                        <a href="{{ route('home') }}"
+                            class="nav-item nav-link {{ Request::routeIs('home') ? 'active' : '' }}">Home</a>
+                        <a href="{{ route('blog') }}"
+                            class="nav-item nav-link {{ Request::routeIs('blog') ? 'active' : '' }}">Blog</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle {{ Request::routeIs('testimoni') ? 'active' : '' }}" data-bs-toggle="dropdown">Pages</a>
+                            <a href="#"
+                                class="nav-link dropdown-toggle {{ Request::routeIs('testimoni') ? 'active' : '' }}"
+                                data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
-                                <a href="feature.html" class="dropdown-item">Our Product</a>
-                                <a href="{{ route('testimoni') }}" class="dropdown-item {{ Request::routeIs('testimoni') ? 'active' : '' }}">Testimonial</a>
+                                <a href="{{ route('course') }}"
+                                    class="dropdown-item {{ Request::routeIs('course') ? 'active' : '' }}">Our
+                                    Course</a>
+                                <a href="{{ route('testimoni') }}"
+                                    class="dropdown-item {{ Request::routeIs('testimoni') ? 'active' : '' }}">Testimonial</a>
                             </div>
-                        </div>                        
-                        <a href="{{ route('contact') }}" class="nav-item nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact</a>
+                        </div>
+                        <a href="{{ route('contact') }}"
+                            class="nav-item nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact</a>
                     </div>
-                    <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
-                    <a href="login" class="btn btn-primary rounded-pill d-inline-flex flex-shrink-0 py-2 px-4">Login</a>
+                    <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3"
+                        data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
+                    <a href="login"
+                        class="btn btn-primary rounded-pill d-inline-flex flex-shrink-0 py-2 px-4">Login</a>
                 </div>
             </nav>
 

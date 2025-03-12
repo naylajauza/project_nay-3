@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Artikel;
 use App\Models\Testimoni;
+use App\Models\Kursus;
 
 class FrontEndController extends Controller
 {
@@ -27,11 +28,20 @@ class FrontEndController extends Controller
 
     public function home()
     {
-        return view('home.frontendUser.home');
+        $artikel = Artikel::all();
+        $testimoni = Testimoni::all();
+        $kursus = Kursus::all();
+        return view('home.frontendUser.home', compact('artikel', 'testimoni', 'kursus'));
     }
-    
+
     public function contact()
     {
         return view('home.frontendUser.contact');
+    }
+
+    public function course()
+    {
+        $kursus = Kursus::all();
+        return view('home.frontendUser.course', compact('kursus'));
     }
 }
