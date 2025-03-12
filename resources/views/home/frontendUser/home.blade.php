@@ -84,10 +84,11 @@
                                 <div class="product-content bg-light text-center rounded-bottom p-4">
                                     <p>durasi {{ $data->durasi }}</p>
                                     <a href="#" class="h4 d-inline-block mb-3">{{ $data->nama_kursus }}</a>
-                                    <p class="fs-4 text-primary mb-3">Rp. {{ number_format($data->harga, 0, ',', '.') }}</p>
+                                    <p class="fs-4 text-primary mb-3">Rp.
+                                        {{ number_format((int) $data->harga, 0, ',', '.') }}</p>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#kursusModal"
                                         data-id="{{ $data->id }}" data-nama="{{ $data->nama_kursus }}"
-                                        data-harga="Rp. {{ number_format($data->harga, 0, ',', '.') }}"
+                                        data-harga="Rp. {{ number_format((int) $data->harga, 0, ',', '.') }}"
                                         data-durasi="{{ $data->durasi }}" data-deskripsi="{{ $data->deskripsi }}"
                                         class="btn
                                         btn-secondary rounded-pill py-2 px-4 btn-readmore-kursus">Read
