@@ -24,16 +24,17 @@ use App\Models\Artikel;
 */
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/l',[LoginController::class,'index']);
-Route::get('/login',[LoginController::class,'index'])->name('login');
-Route::post('/PostLogin',[LoginController::class,'login']);
-Route::get('/logout',[LoginController::class,'logout']);
+Route::get('/l', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/PostLogin', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
 //frontend
 Route::get('/', [FrontEndController::class, 'index'])->name('blog');
 Route::get('/testimoni', [FrontEndController::class, 'testimoni'])->name('testimoni');
-Route::get('/home', [FrontEndController::class, 'home'])->name('home');
+Route::get('/homefront', [FrontEndController::class, 'home'])->name('home');
 Route::get('/contact', [FrontEndController::class, 'contact'])->name('contact');
+Route::get('/course', [FrontEndController::class, 'course'])->name('course');
 
 Route::post('/pendaftaran/daftar', [PendaftaranController::class, 'daftar'])->name('pendaftaran.daftar');
 // route admin (backend)
@@ -41,7 +42,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     Route::get('/', function () {
         return view('home.dashboard');
     });
-
 
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/tambah', [UserController::class, 'create'])->name('user.create');
@@ -57,14 +57,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     Route::get('/artikel/{id}/hapus', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
     Route::post('/artikel/{id}/update', [ArtikelController::class, 'update'])->name('artikel.update');
 
-
     Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
     Route::get('/kategori/tambah', [KategoriController::class, 'create'])->name('kategori.create');
     Route::post('/kategori/simpan', [KategoriController::class, 'store'])->name('kategori.store');
     Route::get('/kategori/{id}/edit', [KategoriController::class, 'edit'])->name('kategori.edit');
     Route::get('/kategori/{id}/hapus', [KategoriController::class, 'destroy'])->name('kategori.destroy');
     Route::post('/kategori/{id}/update', [KategoriController::class, 'update'])->name('kategori.update');
-
 
     Route::get('/kursus', [KursusController::class, 'index'])->name('kursus.index');
     Route::get('/kursus/tambah', [KursusController::class, 'create'])->name('kursus.create');
@@ -88,7 +86,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     Route::post('/testimoni/{id}/update', [TestimoniController::class, 'update'])->name('testimoni.update');
 
     // untuk route admin lainnya
-
 });
-
-
