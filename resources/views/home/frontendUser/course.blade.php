@@ -2,11 +2,11 @@
 @section('content')
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Course</h4>
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Kursus</h4>
             <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                {{-- <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                <li class="breadcrumb-item active text-primary">Our Course</li>
+                <li class="breadcrumb-item active text-primary">Our Course</li> --}}
             </ol>
         </div>
     </div>
@@ -14,8 +14,8 @@
     <div class="container-fluid product py-5">
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                <h4 class="text-uppercase text-primary">Our Course</h4>
-                <h1 class="display-3 text-capitalize mb-3">We Deliver Best Course.</h1>
+                <h4 class="text-uppercase text-primary">Kursus</h4>
+                <h1 class="display-3 text-capitalize mb-3">Kami Memberikan Kursus Terbaik</h1>
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach ($kursus as $data)
