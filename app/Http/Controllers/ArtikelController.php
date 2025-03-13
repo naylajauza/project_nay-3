@@ -40,7 +40,7 @@ class ArtikelController extends Controller
     {
         // Validasi data yang diterima, termasuk gambar cover
         $request->validate([
-        'cover' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi gambar
+            'cover' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi gambar
         ]);
 
         // Simpan artikel tanpa cover terlebih dahulu
@@ -67,11 +67,11 @@ class ArtikelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Artikel $artikel)
+    public function edit($id)
     {
-        $artikel = Artikel::find($artikel);
+        $artikel = Artikel::find($id);
         $kategori = Kategori::all();
-        return view('home.artikel.edit', compact(['artikel'],'kategori'));
+        return view('home.artikel.edit', compact(['artikel'], 'kategori'));
     }
 
     /**
@@ -105,9 +105,9 @@ class ArtikelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Artikel $artikel)
+    public function destroy($id)
     {
-        $artikels = Artikel::find($artikel);
+        $artikels = Artikel::find($id);
         $artikels->delete();
         return redirect('admin/artikel');
     }
