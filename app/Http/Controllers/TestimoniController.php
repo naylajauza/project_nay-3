@@ -37,7 +37,7 @@ class TestimoniController extends Controller
     public function store(Request $request)
     {
         Testimoni::create($request->all());
-        return redirect('/testimoni');
+        return redirect()->route('testimoni.index');
     }
 
     /**
@@ -74,7 +74,7 @@ class TestimoniController extends Controller
     {
         $testimoni = Testimoni::find($id);
         $testimoni->update($request->all());
-        return redirect('/testimoni');
+        return redirect()->route('testimoni.index');
     }
 
     /**
@@ -87,6 +87,6 @@ class TestimoniController extends Controller
     {
         $testimoni = Testimoni::find($id);
         $testimoni->delete();
-        return redirect('/testimoni');
+        return redirect()->route('testimoni.index');
     }
 }

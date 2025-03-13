@@ -36,8 +36,7 @@
                                                     <td>{{ $u->kategori->nama_kategori }}</td>
                                                     <td>{{ $u->deskripsi }}</td>
                                                     <td>
-                                                        <img src="{{ asset( $u->cover) }}"
-                                                            class="rounded"
+                                                        <img src="{{ asset($u->cover) }}" class="rounded"
                                                             style="width: 150px; height: 150px; object-fit: cover;">
                                                     <td>
                                                         <a href="/admin/artikel/{{ $u->id }}/edit"

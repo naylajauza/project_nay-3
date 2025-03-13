@@ -31,7 +31,7 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 //frontend
 Route::get('/', [FrontEndController::class, 'index'])->name('blog');
-Route::get('/testimoni', [FrontEndController::class, 'testimoni'])->name('testimoni');
+Route::get('/testimonifront', [FrontEndController::class, 'testimoni'])->name('testimoni');
 Route::get('/homefront', [FrontEndController::class, 'home'])->name('home');
 Route::get('/contact', [FrontEndController::class, 'contact'])->name('contact');
 Route::get('/course', [FrontEndController::class, 'course'])->name('course');
