@@ -2,7 +2,8 @@
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <img src="{{ asset('assets/front/img/logo-no-bg.png') }}" alt="Logo">
+                    <h1 class="text-primary"><img src="{{ asset('assets/front/img/logo-no-bg.png') }}"
+                            alt="Logo"></i>Bimbelku</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>

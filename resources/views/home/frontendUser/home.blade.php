@@ -2,9 +2,9 @@
 @section('content')
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Home</h4>
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Selamat Datang Di Bimbelku</h4>
             <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                <li class="breadcrumb-item active text-primary">Home</li>
+                {{-- <li class="breadcrumb-item active text-primary">Home</li> --}}
             </ol>
         </div>
     </div>
@@ -14,11 +14,11 @@
             <div class="row g-5">
                 <div class="col-xl-12 wow fadeInRight" data-wow-delay="0.2s">
                     <div class="about-item">
-                        <h4 class="text-primary text-uppercase">About Us</h4>
-                        <h1 class="display-3 mb-3">We Deliver The Quality Water.</h1>
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum quidem quas totam
-                            nostrum! Maxime rerum voluptatem sed, facilis unde a aperiam nulla voluptatibus excepturi ipsam
-                            iusto consequuntur
+                        <h4 class="text-primary text-uppercase">Tentang Kami</h4>
+                        <h1 class="display-3 mb-3"> Kami adalah lembaga bimbingan yang berkomitmen
+                            untuk membantu siswa meraih
+                            kesuksesan akademik melalui pendekatan pembelajaran yang efektif,
+                            menyenangkan, dan sesuai dengan kebutuhan masing-masing siswa.
                         </p>
                         <div class="bg-light rounded p-4 mb-4">
                             <div class="row">
@@ -30,9 +30,10 @@
                                                     class="fas fa-tint text-white fa-2x"></i></div>
                                         </div>
                                         <div class="">
-                                            <a href="#" class="h4 d-inline-block mb-3">Satisfied Customer</a>
-                                            <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-                                                provident maiores quisquam.</p>
+                                            <a href="#" class="h4 d-inline-block mb-3">Visi</a>
+                                            <p class="mb-0">Kami Menjadi lembaga bimbingan terdepan yang tidak
+                                                hanya membantu siswa meraih nilai terbaik, tetapi juga membentuk karakter
+                                                 dan keterampilan yang diperlukan untuk menghadapi tantangan masa depan.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -48,15 +49,15 @@
                                                     class="fas fa-faucet text-white fa-2x"></i></div>
                                         </div>
                                         <div class="">
-                                            <a href="#" class="h4 d-inline-block mb-3">Standard Product</a>
-                                            <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-                                                provident maiores quisquam.</p>
+                                            <a href="#" class="h4 d-inline-block mb-3">Misi</a>
+                                            <p class="mb-0">Menyediakan pengajaran yang berkualitas dan sesuai dengan kurikulum terkini.
+                                                Membantu siswa dalam memahami materi pelajaran dengan cara yang mudah dan menyenangkan.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-secondary rounded-pill py-3 px-5">Read More</a>
+                        {{-- <a href="#" class="btn btn-secondary rounded-pill py-3 px-5">Read More</a> --}}
                     </div>
                 </div>
             </div>
@@ -67,8 +68,8 @@
         <div class="container-fluid product py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-uppercase text-primary">Our Course</h4>
-                    <h1 class="display-3 text-capitalize mb-3">We Deliver Best Course.</h1>
+                    <h4 class="text-uppercase text-primary">Kursus</h4>
+                <h1 class="display-3 text-capitalize mb-3">Kami Memberikan Kursus Terbaik</h1>
                 </div>
                 <div class="row g-4 justify-content-center">
                     @foreach ($kursus as $data)
@@ -98,8 +99,8 @@
         <div class="container-fluid blog py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-uppercase text-primary">Our Blog</h4>
-                    <h1 class="display-3 text-capitalize mb-3">Latest Blog & News</h1>
+                    <h4 class="text-uppercase text-primary">Artikel</h4>
+                    <h1 class="display-3 text-capitalize mb-3">Artikel dan Berita terbaru</h1>
                 </div>
                 <div class="row g-4 justify-content-center">
                     @foreach ($artikel as $item)
@@ -131,8 +132,8 @@
         <div class="container-fluid testimonial py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-uppercase text-primary">Testimonials</h4>
-                    <h1 class="display-3 text-capitalize mb-3">Our clients reviews.</h1>
+                    <h4 class="text-uppercase text-primary">Testimoni</h4>
+                    <h1 class="display-3 text-capitalize mb-3">Ulasan klien kami</h1>
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
                     <div class="testimonial-item text-center p-4">
