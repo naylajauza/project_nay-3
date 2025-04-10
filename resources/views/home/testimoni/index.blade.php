@@ -32,7 +32,8 @@
                                                 <td scope="row">{{$u->id}}</td>
                                                 <td>{{$u->nama_siswa}}</td>
                                                 <td>{{$u->pencapaian}}</td>
-                                                <td>{{$u->cover}}</td>
+                                                <td><img src="{{ asset($u->cover) }}" class="rounded"
+                                                    style="width: 150px; height: 150px; object-fit: cover;"></td>
                                                 <td>{{$u->pesan}}</td>
                                                 <td>
                                                     <a href="/admin/testimoni/{{$u->id}}/edit" class="btn btn-warning">Edit</a>

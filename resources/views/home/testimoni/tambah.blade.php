@@ -13,7 +13,7 @@
                                 </center>
                             </div>
                             <div class="card-body">
-                                <form action="/admin/testimoni/simpan" method="POST">
+                                <form action="/admin/testimoni/simpan" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="" class="form-label">Nama Siswa</label>
@@ -24,12 +24,12 @@
                                     <input type="text" name="pencapaian" class="form-control" placeholder="Masukan Pencapaian" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="form-label">Cover</label>
-                                    <input type="text" name="cover" class="form-control" placeholder="Masukan Cover" required>
-                                </div>
-                                <div class="form-group">
                                     <label for="" class="form-label">Pesan</label>
                                     <input type="text" name="pesan" class="form-control" placeholder="Masukan Pesan" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cover" class="form-label">Cover</label>
+                                    <input class="form-control" name="cover" type="file" id="formFile">
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Simpan</button>

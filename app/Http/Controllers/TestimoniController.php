@@ -36,8 +36,27 @@ class TestimoniController extends Controller
      */
     public function store(Request $request)
     {
-        Testimoni::create($request->all());
-        return redirect()->route('testimoni.index');
+        $request->validate([
+            'cover' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi gambar
+        ]);
+
+        // Simpan artikel tanpa cover terlebih dahulu
+        $data = $request->all();
+
+
+        if ($request->hasFile('cover')) {
+            $file = $request->file('cover');
+            $filename = time() . '_' . $file->getClientOriginalName(); // Nama unik
+            $file->storeAs('public/covers/testimonis', $filename); // Simpan ke storage
+
+            // Menambahkan path file gambar ke data artikel
+            $data['cover'] = 'storage/covers/testimonis/' . $filename;
+        }
+
+        Testimoni::create($data);
+
+        return redirect('admin/testimoni');
+
     }
 
     /**
