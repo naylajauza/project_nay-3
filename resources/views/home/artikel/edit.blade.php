@@ -13,7 +13,7 @@
                             </center>
                         </div>
                         <div class="card-body">
-                            <form action="/admin/artikel/{{$artikel->id}}/update" method="POST">
+                            <form action="/admin/artikel/{{$artikel->id}}/update" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="" class="form-label">Judul</label>
@@ -37,7 +37,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="" class="form-label">Cover</label>
-                                <input type="text" name="cover" value="{{$artikel->cover}}" class="form-control" placeholder="Masukan Cover" required>
+                                <input type="file" name="cover" value="{{$artikel->cover}}" class="form-control" placeholder="Masukan Cover" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
                             <a href="/admin/artikel" class="btn btn-secondary">Batal</a>

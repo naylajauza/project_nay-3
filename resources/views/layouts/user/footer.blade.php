@@ -33,20 +33,17 @@
                             <h4 class="text-white mb-4">About Us</h4>
                             <a href="{{ route('home') }}"><i class="fas fa-angle-right me-2"></i>Home</a>
                             <a href="{{ route('blog') }}"><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href="{{ route('course') }}"><i class="fas fa-angle-right me-2"></i> Our Course</a>
-                            <a href="{{ route('testimoni') }}"><i class="fas fa-angle-right me-2"></i> Testimonial</a>
-                            <a href="{{ route('contact') }}"><i class="fas fa-angle-right me-2"></i> Contact us</a>
+                            <a href="{{ route('course') }}"><i class="fas fa-angle-right me-2"></i>Kursus</a>
+                            <a href="{{ route('testimoni') }}"><i class="fas fa-angle-right me-2"></i> Testimoni</a>
+                            <a href="{{ route('contact') }}"><i class="fas fa-angle-right me-2"></i>Pendaftaran</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4">Contact Info</h4>
-                            <a href="#"><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
-                            <a href="mailto:info@example.com"><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href="mailto:info@example.com"><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="tel:+012 345 67890" class="mb-3"><i class="fas fa-print me-2"></i> +012 345
-                                67890</a>
+                            <a href="#"><i class="fa fa-map-marker-alt me-2"></i> SMK Assalaam Bandung</a>
+                            <a href="mailto:info@example.com"><i class="fas fa-envelope me-2"></i> info@gmail.com</a>
+                            <a href="tel:+012 345 67890" class="mb-3"><i class="fas fa-print me-2"></i> +62 888888888</a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +58,7 @@
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-md-0">
                         <span class="text-body"><a href="#" class="border-bottom text-white"><i
-                                    class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right
+                                    class="fas fa-copyright text-light me-2"></i>BimbelKu</a>, All right
                             reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-body">

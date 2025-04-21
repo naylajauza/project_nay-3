@@ -84,6 +84,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     Route::get('/testimoni/{id}/edit', [TestimoniController::class, 'edit'])->name('testimoni.edit');
     Route::get('/testimoni/{id}/hapus', [TestimoniController::class, 'destroy'])->name('testimoni.destroy');
     Route::post('/testimoni/{id}/update', [TestimoniController::class, 'update'])->name('testimoni.update');
+    
 
     // untuk route admin lainnya
 });

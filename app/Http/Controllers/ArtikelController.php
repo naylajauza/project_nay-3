@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Models\Artikel;
@@ -67,11 +67,9 @@ class ArtikelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function show($id)
     {
-        $artikel = Artikel::find($id);
-        $kategori = Kategori::all();
-        return view('home.artikel.edit', compact(['artikel'], 'kategori'));
+        //
     }
 
     /**
@@ -80,22 +78,43 @@ class ArtikelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function edit($id)
     {
-        //
+        $artikel = Artikel::find($id);
+        $kategori = Kategori::all();
+        return view('home.artikel.edit', compact(['artikel'], 'kategori'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Artikel $artikel)
     {
-        $artikels = Artikel::find($artikel);
-        $artikels->update($request->all());
+        // Validasi data yang diterima, termasuk gambar cover jika ada
+        $request->validate([
+            'cover' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi gambar
+        ]);
+
+        // Simpan artikel tanpa cover terlebih dahulu
+        $data = $request->all();
+
+        // Simpan gambar jika ada
+        if ($request->hasFile('cover')) {
+            $file = $request->file('cover');
+            $filename = time() . '_' . $file->getClientOriginalName(); // Nama unik
+            $file->storeAs('public/covers/artikels', $filename); // Simpan ke storage
+
+            // Menambahkan path file gambar ke data artikel
+            $data['cover'] = 'storage/covers/artikels/' . $filename;
+        }
+
+        // Update artikel yang sudah ada
+        $artikel->update($data);
+
         return redirect('admin/artikel');
     }
 
@@ -107,8 +126,8 @@ class ArtikelController extends Controller
      */
     public function destroy($id)
     {
-        $artikels = Artikel::find($id);
-        $artikels->delete();
+        $artikel = Artikel::find($id);
+        $artikel->delete();
         return redirect('admin/artikel');
     }
 }

@@ -17,22 +17,23 @@
                         <div class="nav-item dropdown">
                             <a href="#"
                                 class="nav-link dropdown-toggle {{ Request::routeIs('testimoni') ? 'active' : '' }}"
-                                data-bs-toggle="dropdown">Pages</a>
+                                data-bs-toggle="dropdown">Halaman</a>
                             <div class="dropdown-menu m-0">
                                 <a href="{{ route('course') }}"
-                                    class="dropdown-item {{ Request::routeIs('course') ? 'active' : '' }}">Our
-                                    Course</a>
+                                    class="dropdown-item {{ Request::routeIs('course') ? 'active' : '' }}">
+                                    Kursus</a>
                                 <a href="{{ route('testimoni') }}"
-                                    class="dropdown-item {{ Request::routeIs('testimoni') ? 'active' : '' }}">Testimonial</a>
+                                    class="dropdown-item {{ Request::routeIs('testimoni') ? 'active' : '' }}">Testimoni</a>
                             </div>
                         </div>
                         <a href="{{ route('contact') }}"
-                            class="nav-item nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact</a>
+                            class="nav-item nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Pendaftaran</a>
                     </div>
                     <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3"
                         data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
                     <a href="login"
                         class="btn btn-primary rounded-pill d-inline-flex flex-shrink-0 py-2 px-4">Login</a>
+
                 </div>
             </nav>
 

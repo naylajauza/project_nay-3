@@ -39,7 +39,7 @@ class PendaftaranController extends Controller
     public function store(Request $request)
     {
         Pendaftaran::create($request->all());
-        return redirect('/pendaftaran');
+        return redirect('admin/pendaftaran');
     }
     public function daftar(Request $request)
     {
@@ -100,7 +100,7 @@ class PendaftaranController extends Controller
     {
         $pendaftaran = Pendaftaran::find($id);
         $pendaftaran->update($request->all());
-        return redirect('/pendaftaran');
+        return redirect('admin/pendaftaran');
     }
 
     /**
@@ -113,6 +113,6 @@ class PendaftaranController extends Controller
     {
         $pendaftaran = Pendaftaran::find($id);
         $pendaftaran->delete();
-        return redirect('/pendaftaran');
+        return redirect('admin/pendaftaran');
     }
 }
